@@ -613,8 +613,8 @@
     <string name="qs_footer_warnings_title">Предупреждение о VPN</string>
     <string name="qs_footer_warnings_summary">Показывать предупреждение, когда сеть контролируется сторонними приложениями или VPN</string>
     <string name="hardware_keys_power_category">Кнопка питания</string>
-    <string name="power_end_call_title">Завершить вызов</string>
-    <string name="power_end_call_summary">Завершить текущий вызов нажатием кнопки питания</string>
+    <string name="power_end_call_title">Завершение вызова</string>
+    <string name="power_end_call_summary">Завершение текущего вызова нажатием кнопки питания</string>
     <!-- MediaScanner behavior on boot -->
     <string name="media_scanner_on_boot_title">Поведение медиа-сканера</string>
     <string name="media_scanner_on_boot_enabled">Сканировать медиа</string>
@@ -1358,10 +1358,12 @@
     <string name="keyguard_multiuser_switch_title">Переключение пользователей</string>
     <string name="keyguard_multiuser_switch_summary">Иконка пользователя в строке состояния</string>
     <!-- Torch Power button gestures -->
-    <string name="power_button_torch_gesture_title">Фонарик при выключенном экране</string>
+    <string name="power_button_torch_gesture_title">Включение фонарика нажатием кнопки питания</string>
     <string name="power_button_torch_gesture_none">Отключено</string>
-    <string name="power_button_torch_gesture_dt">Двойное нажатие кнопки питания</string>
-    <string name="power_button_torch_gesture_lp">Долгое нажатие кнопки питания</string>
+    <string name="power_button_torch_gesture_dt">Двойное нажатие</string>
+    <string name="power_button_torch_gesture_lp">Долгое нажатие</string>
+    <string name="power_button_torch_check_title">Проверка датчика приближения</string>
+    <string name="power_button_torch_check_desc">Проверять датчик приближения перед включением фонарика</string>
     <!-- Adaptive icon shape -->
     <string name="icon_shape_title">Форма иконок приложений</string>
     <string name="icon_shape_system_default">По умолчанию (системная)</string>

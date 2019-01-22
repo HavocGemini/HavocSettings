@@ -701,6 +701,8 @@
     <string name="qs_footer_warnings_summary">Display a warning when network is monitored by external apps or vpn</string>
 
     <string name="hardware_keys_power_category">Power Button</string>
+    <string name="power_button_torch_check_title">Proximity check for torch</string>
+    <string name="power_button_torch_check_desc">Check proximity sensor before turning on the flashlight</string>
     <string name="power_end_call_title">End call</string>
     <string name="power_end_call_summary">End the current call by pressing the power button</string>
 

@@ -63,6 +63,13 @@
             android:entries="@array/power_button_torch_gesture_entries"
             android:entryValues="@array/power_button_torch_gesture_values" />
 
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
+            android:key="power_button_torch_check"
+            android:title="@string/power_button_torch_check_title"
+            android:summary="@string/power_button_torch_check_desc"
+            android:dependency="torch_power_button_gesture"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
