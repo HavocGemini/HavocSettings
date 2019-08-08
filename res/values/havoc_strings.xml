@@ -790,6 +790,14 @@
     <string name="screenshot_type_fullscreen">Full</string>
     <string name="screenshot_type_partial">Partial</string>
 
+    <string name="misc_vibro">Vibration</string>
+    <string name="haptic_feedback_intensity_title">Haptic feedback intensity</string>
+    <string name="notification_vibration_intensity_title">Notification vibration intensity</string>
+    <string name="vibro_intensity_off">Off</string>
+    <string name="vibro_intensity_low">Low</string>
+    <string name="vibro_intensity_medium">Medium</string>
+    <string name="vibro_intensity_high">High</string>
+
     <!-- Lock Clock Fonts -->
     <string name="lock_clock_font_title">Clock font style</string>
     <string name="lock_clock_font_stock">Regular</string>

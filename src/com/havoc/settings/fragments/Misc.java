@@ -44,10 +44,14 @@ public class Misc extends SettingsPreferenceFragment
     private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
     private static final String SCROLLINGCACHE_DEFAULT = "3";
     private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
+    private static final String HFI = "haptic_feedback_intensity";
+    private static final String NVI = "notification_vibration_intensity";
 
     private ListPreference mMSOB;
     private ListPreference mScrollingCachePref;
     private SystemSettingMasterSwitchPreference mGamingMode;
+    private ListPreference mHFI;
+    private ListPreference mNVI;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,6 +78,20 @@ public class Misc extends SettingsPreferenceFragment
         mGamingMode.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.GAMING_MODE_ENABLED, 0) == 1));
         mGamingMode.setOnPreferenceChangeListener(this);
+
+        mHFI = (ListPreference) findPreference(HFI);
+        int mHFIV = Settings.System.getInt(getContentResolver(),
+                Settings.System.HAPTIC_FEEDBACK_INTENSITY, 0);
+        mHFI.setValue(Integer.toString(mHFIV));
+        mHFI.setSummary(mHFI.getEntry());
+        mHFI.setOnPreferenceChangeListener(this);
+
+        mNVI = (ListPreference) findPreference(NVI);
+        int mNVIV = Settings.System.getInt(getContentResolver(),
+                Settings.System.NOTIFICATION_VIBRATION_INTENSITY, 0);
+        mNVI.setValue(Integer.toString(mNVIV));
+        mNVI.setSummary(mNVI.getEntry());
+        mNVI.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -91,10 +109,24 @@ public class Misc extends SettingsPreferenceFragment
             SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, value);
             mScrollingCachePref.setSummary(mScrollingCachePref.getEntries()[index]);
             return true;
-		} else if (preference == mGamingMode) {
+        } else if (preference == mGamingMode) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.GAMING_MODE_ENABLED, value ? 1 : 0);
+            return true;
+        } else if (preference == mHFI) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mHFI.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.HAPTIC_FEEDBACK_INTENSITY, value);
+            mHFI.setSummary(mHFI.getEntries()[index]);
+            return true;
+        } else if (preference == mNVI) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mNVI.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.NOTIFICATION_VIBRATION_INTENSITY, value);
+            mNVI.setSummary(mNVI.getEntries()[index]);
             return true;
         }
         return false;

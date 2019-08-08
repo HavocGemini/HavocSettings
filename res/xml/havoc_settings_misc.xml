@@ -15,7 +15,7 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-	android:title="@string/misc_title"
+    android:title="@string/misc_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <com.havoc.support.preferences.SystemSettingMasterSwitchPreference
@@ -31,7 +31,7 @@
         android:entries="@array/media_scanner_on_boot_entries" 
         android:entryValues="@array/media_scanner_on_boot_values" /> 
 
-	<ListPreference
+    <ListPreference
         android:key="pref_scrollingcache"
         android:title="@string/pref_scrollingcache_title"
         android:summary="@string/pref_scrollingcache_summary"
@@ -91,6 +91,26 @@
             android:entryValues="@array/screenshot_type_values"
             android:title="@string/screenshot_type_title"
             android:defaultValue="0" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="misc_vibro"
+        android:title="@string/misc_vibro">
+
+        <com.havoc.support.preferences.SystemSettingListPreference
+            android:key="haptic_feedback_intensity"
+            android:entries="@array/vibro_intensity_entries"
+            android:entryValues="@array/vibro_intensity_values"
+            android:title="@string/haptic_feedback_intensity_title"
+            android:defaultValue="2" />
+
+        <com.havoc.support.preferences.SystemSettingListPreference
+            android:key="notification_vibration_intensity"
+            android:entries="@array/vibro_intensity_entries"
+            android:entryValues="@array/vibro_intensity_values"
+            android:title="@string/notification_vibration_intensity_title"
+            android:defaultValue="2" />
 
     </PreferenceCategory>
 

@@ -692,6 +692,14 @@
     <string name="screenshot_type_title">Тип скриншота</string>
     <string name="screenshot_type_fullscreen">Полный</string>
     <string name="screenshot_type_partial">Определённая область</string>
+
+    <string name="misc_vibro">Вибрация</string>
+    <string name="haptic_feedback_intensity_title">Интенсивность обратной связи</string>
+    <string name="notification_vibration_intensity_title">Интенсивность вибрации для уведомлений</string>
+    <string name="vibro_intensity_off">Отключена</string>
+    <string name="vibro_intensity_low">Низкая</string>
+    <string name="vibro_intensity_medium">Средняя</string>
+    <string name="vibro_intensity_high">Высокая</string>
     <!-- Lock Clock Fonts -->
     <string name="lock_clock_font_title">Стиль шрифта часов</string>
     <string name="lock_clock_font_stock">Обычный</string>
