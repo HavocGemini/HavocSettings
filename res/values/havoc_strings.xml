@@ -378,6 +378,10 @@
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
 
+    <!-- QC3.0 Charge limit -->
+    <string name="qc3_category">Charging limit</string>
+    <string name="qc3_title">QC3.0 charging limit</string>
+
     <!-- Show QS on lockscreen -->
     <string name="block_on_secure_keyguard_title">Quick settings</string>
     <string name="block_on_secure_keyguard_summary">Show quick settings on secure lockscreen</string>

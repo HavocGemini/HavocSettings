@@ -703,6 +703,9 @@
     <string name="vibro_intensity_low">Низкая</string>
     <string name="vibro_intensity_medium">Средняя</string>
     <string name="vibro_intensity_high">Высокая</string>
+    <!-- QC3.0 Charge limit -->
+    <string name="qc3_category">Ограничение тока зарядки</string>
+    <string name="qc3_title">Ограничение тока зарядки QC3.0</string>
     <!-- Lock Clock Fonts -->
     <string name="lock_clock_font_title">Стиль шрифта часов</string>
     <string name="lock_clock_font_stock">Обычный</string>

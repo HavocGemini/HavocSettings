@@ -34,7 +34,8 @@ import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.settings.R;
-
+import com.havoc.settings.Utils;
+import com.havoc.support.preferences.CustomSeekBarPreference;
 import com.havoc.support.preferences.SystemSettingMasterSwitchPreference;
 
 import java.util.ArrayList;
@@ -52,18 +53,22 @@ public class Misc extends SettingsPreferenceFragment
     private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
     private static final String HFI = "haptic_feedback_intensity";
     private static final String NVI = "notification_vibration_intensity";
+    private static final String CHARGE_LIMIT_KEY = "hvdcp3";
+    private static final String CHARGE_LIMIT_NODE = "/sys/devices/soc/400f000.qcom,spmi/spmi-0/spmi0-02/400f000.qcom,spmi:qcom,pmi8994@2:qcom,qpnp-smbcharger/power_supply/battery/constant_charge_current_max";
 
     private ListPreference mMSOB;
     private ListPreference mScrollingCachePref;
     private SystemSettingMasterSwitchPreference mGamingMode;
     private ListPreference mHFI;
     private ListPreference mNVI;
+    private CustomSeekBarPreference mhvdcp3;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.havoc_settings_misc);
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
         // MediaScanner behavior on boot
         mMSOB = (ListPreference) findPreference(MEDIA_SCANNER_ON_BOOT);
@@ -98,6 +103,16 @@ public class Misc extends SettingsPreferenceFragment
         mNVI.setValue(Integer.toString(mNVIV));
         mNVI.setSummary(mNVI.getEntry());
         mNVI.setOnPreferenceChangeListener(this);
+
+        mhvdcp3 = (CustomSeekBarPreference) findPreference(CHARGE_LIMIT_KEY);
+        boolean whvdcp3 = (Utils.fileExists(CHARGE_LIMIT_NODE) && Utils.isFileReadable(CHARGE_LIMIT_NODE) && Utils.isFileWritable(CHARGE_LIMIT_NODE));
+        if (whvdcp3) {
+            int hvdcp3def = (Integer.valueOf(Utils.readOneLine(CHARGE_LIMIT_NODE)) / 1000);
+            mhvdcp3.setValue(hvdcp3def);
+            mhvdcp3.setOnPreferenceChangeListener(this);
+        } else {
+            prefScreen.removePreference(mhvdcp3);
+        }
     }
 
     @Override
@@ -133,6 +148,10 @@ public class Misc extends SettingsPreferenceFragment
             Settings.System.putInt(getContentResolver(),
                     Settings.System.NOTIFICATION_VIBRATION_INTENSITY, value);
             mNVI.setSummary(mNVI.getEntries()[index]);
+            return true;
+        } else if (preference == mhvdcp3) {
+            String value = String.valueOf(((int) newValue) * 1000);
+            Utils.writeLine(CHARGE_LIMIT_NODE, value);
             return true;
         }
         return false;

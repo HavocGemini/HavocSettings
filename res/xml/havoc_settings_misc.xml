@@ -101,4 +101,18 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/qc3_category">
+        <com.havoc.support.preferences.CustomSeekBarPreference
+            android:key="hvdcp3"
+            android:title="@string/qc3_title"
+            android:max="3000"
+            settings:min="1000"
+            settings:interval="100"
+            settings:units="mA"
+            android:defaultValue="2700"
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

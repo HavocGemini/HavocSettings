@@ -40,6 +40,18 @@ import android.view.DisplayInfo;
 import android.view.Surface;
 import android.view.WindowManager;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+
+import android.util.Log;
+
 public abstract class Utils {
 
     private static final String TAG = "Utils";
@@ -263,5 +275,95 @@ public abstract class Utils {
                             }
                 })
                 .show();
+    }
+
+    /**
+     * Reads the first line of text from the given file.
+     * Reference {@link BufferedReader#readLine()} for clarification on what a line is
+     *
+     * @return the read line contents, or null on failure
+     */
+    public static String readOneLine(String fileName) {
+        String line = null;
+        BufferedReader reader = null;
+
+        try {
+            reader = new BufferedReader(new FileReader(fileName), 512);
+            line = reader.readLine();
+        } catch (FileNotFoundException e) {
+            Log.w(TAG, "No such file " + fileName + " for reading", e);
+        } catch (IOException e) {
+            Log.e(TAG, "Could not read from file " + fileName, e);
+        } finally {
+            try {
+                if (reader != null) {
+                    reader.close();
+                }
+            } catch (IOException e) {
+                // Ignored, not much we can do anyway
+            }
+        }
+
+        return line;
+    }
+
+    /**
+     * Writes the given value into the given file
+     *
+     * @return true on success, false on failure
+     */
+    public static boolean writeLine(String fileName, String value) {
+        BufferedWriter writer = null;
+
+        try {
+            writer = new BufferedWriter(new FileWriter(fileName));
+            writer.write(value);
+        } catch (FileNotFoundException e) {
+            Log.w(TAG, "No such file " + fileName + " for writing", e);
+            return false;
+        } catch (IOException e) {
+            Log.e(TAG, "Could not write to file " + fileName, e);
+            return false;
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close();
+                }
+            } catch (IOException e) {
+                // Ignored, not much we can do anyway
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Checks whether the given file exists
+     *
+     * @return true if exists, false if not
+     */
+    public static boolean fileExists(String fileName) {
+        final File file = new File(fileName);
+        return file.exists();
+    }
+
+    /**
+     * Checks whether the given file is readable
+     *
+     * @return true if readable, false if not
+     */
+    public static boolean isFileReadable(String fileName) {
+        final File file = new File(fileName);
+        return file.exists() && file.canRead();
+    }
+
+    /**
+     * Checks whether the given file is writable
+     *
+     * @return true if writable, false if not
+     */
+    public static boolean isFileWritable(String fileName) {
+        final File file = new File(fileName);
+        return file.exists() && file.canWrite();
     }
 }

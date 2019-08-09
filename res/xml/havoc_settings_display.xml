@@ -42,7 +42,7 @@
             android:defaultValue="false"
             android:disableDependentsState="true" />
 
-	    <com.havoc.support.preferences.CustomSeekBarPreference
+	<com.havoc.support.preferences.CustomSeekBarPreference
             android:key="sysui_rounded_size"
             android:title="@string/corner_radius"
             android:max="80"
