@@ -13,6 +13,7 @@
      limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/edge_gestures_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <com.havoc.support.preferences.SecureSettingListPreference

@@ -18,6 +18,7 @@ package com.havoc.settings.fragments;
 
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Bundle;
@@ -26,15 +27,21 @@ import android.os.Handler;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.provider.Settings;
+import android.provider.SearchIndexableResource;
 import android.view.WindowManager;
 import android.view.WindowManagerPolicyControl;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 import com.android.settings.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ExpandedDesktopExtraPrefs extends SettingsPreferenceFragment
-        implements Preference.OnPreferenceChangeListener{
+        implements Preference.OnPreferenceChangeListener, Indexable {
     private static final String KEY_EXPANDED_DESKTOP_STYLE = "expanded_desktop_style";
 
     private ListPreference mExpandedDesktopStylePref;
@@ -152,4 +159,28 @@ public class ExpandedDesktopExtraPrefs extends SettingsPreferenceFragment
             }
         }
     }
+
+    /**
+     * For Search.
+     */
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.expanded_desktop_prefs;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    final List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }

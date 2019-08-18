@@ -26,15 +26,21 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
+import android.provider.SearchIndexableResource;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.havoc.HavocUtils;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import com.havoc.settings.R;
 
 public class Recents extends SettingsPreferenceFragment implements
-        OnPreferenceChangeListener {
+        OnPreferenceChangeListener, Indexable {
 
     private static final String RECENTS_LAYOUT_STYLE_PREF = "recents_layout_style";
     private static final String KEY_STOCK_RECENTS = "stock_recents_fragment";
@@ -53,7 +59,7 @@ public class Recents extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.havoc_settings_recents);
 
         ContentResolver resolver = getActivity().getContentResolver();
-        mContext = getActivity().getApplicationContext(); 
+        mContext = getActivity().getApplicationContext();
 
         mRecentsLayoutStylePref = (ListPreference) findPreference(RECENTS_LAYOUT_STYLE_PREF);
         int type = Settings.System.getInt(resolver,
@@ -64,7 +70,7 @@ public class Recents extends SettingsPreferenceFragment implements
 
         mStockRecents = (PreferenceScreen) findPreference(KEY_STOCK_RECENTS);
         mSlimRecents = (PreferenceScreen) findPreference(KEY_SLIM_RECENTS);
-        updateRecentsState(type); 
+        updateRecentsState(type);
     }
 
     public void updateRecentsState(int type) {
@@ -112,7 +118,7 @@ public class Recents extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.RECENTS_LAYOUT_STYLE, type);
             mRecentsLayoutStylePref.setSummary(mRecentsLayoutStylePref.getEntries()[index]);
-            updateRecentsState(type); 
+            updateRecentsState(type);
             if (type != 0) { // Disable swipe up gesture, if oreo type selected
                 Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.SWIPE_UP_TO_SWITCH_APPS_ENABLED, 0);
@@ -127,4 +133,28 @@ public class Recents extends SettingsPreferenceFragment implements
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.HAVOC_SETTINGS;
     }
+
+    /**
+     * For Search.
+     */
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.havoc_settings_recents;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    final List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }

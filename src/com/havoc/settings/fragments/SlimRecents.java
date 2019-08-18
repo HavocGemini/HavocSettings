@@ -31,6 +31,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.provider.SearchIndexableResource;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,7 +44,9 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.internal.logging.nano.MetricsProto; 
+import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.havoc.settings.R;
 
@@ -52,11 +55,12 @@ import com.havoc.support.colorpicker.ColorPickerPreference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 
 public class SlimRecents extends SettingsPreferenceFragment
-        implements Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener {
+        implements Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener, Indexable {
 
     private static final String RECENT_PANEL_LEFTY_MODE = "recent_panel_lefty_mode";
     private static final String RECENT_ICON_PACK = "slim_icon_pack";
@@ -389,4 +393,28 @@ public class SlimRecents extends SettingsPreferenceFragment
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.HAVOC_SETTINGS;
     }
+
+    /**
+     * For Search.
+     */
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.slim_recents;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    final List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }

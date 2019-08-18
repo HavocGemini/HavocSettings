@@ -18,6 +18,7 @@ package com.havoc.settings.fragments;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
@@ -26,16 +27,22 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.provider.SearchIndexableResource;
 import android.view.Gravity;
 import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.settings.gestureanywhere.GestureAnywhereBuilderActivity;
 import com.havoc.support.preferences.CustomSeekBarPreference;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GestureAnywhereSettings extends SettingsPreferenceFragment implements
-        OnPreferenceChangeListener {
+        OnPreferenceChangeListener, Indexable {
     private static final String TAG = "GestureAnywhereSettings";
 
     private static final String KEY_POSITION = "gesture_anywhere_position";
@@ -158,4 +165,28 @@ public class GestureAnywhereSettings extends SettingsPreferenceFragment implemen
         Settings.System.putInt(getContentResolver(),
                 Settings.System.GESTURE_ANYWHERE_SHOW_TRIGGER, 1);
     }
+
+    /**
+     * For Search.
+     */
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.gesture_anywhere;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    final List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }

@@ -15,8 +15,8 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-	    android:title="@string/battery_light_settings">
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/battery_light_settings">
 
     <com.havoc.support.preferences.SystemSettingSwitchPreference
         android:key="battery_light_allow_on_dnd"

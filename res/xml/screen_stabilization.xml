@@ -16,8 +16,8 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-	android:title="@string/screen_stabilization_title">
-	
+    android:title="@string/screen_stabilization_title">
+
     <ListPreference
         android:key="stabilization_velocity_friction"
         android:title="@string/stabilization_velocity_friction_title"

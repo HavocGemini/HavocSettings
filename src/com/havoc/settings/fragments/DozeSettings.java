@@ -434,4 +434,3 @@ public class DozeSettings extends SettingsPreferenceFragment {
         Toast.makeText(mContext, getResources().getString(R.string.doze_settings_applied), Toast.LENGTH_SHORT).show();
     }
 }
-

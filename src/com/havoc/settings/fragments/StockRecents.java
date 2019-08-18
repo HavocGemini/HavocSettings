@@ -23,7 +23,7 @@ import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
-import android.content.SharedPreferences; 
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
@@ -33,6 +33,7 @@ import android.os.Bundle;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.provider.SearchIndexableResource;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
@@ -55,6 +56,8 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.havoc.HavocUtils;
 import com.android.settings.dashboard.SummaryLoader;
 import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.settings.Utils;
@@ -70,7 +73,7 @@ import java.util.Map;
 import java.util.List;
 
 public class StockRecents extends SettingsPreferenceFragment implements
-        OnPreferenceChangeListener, DialogInterface.OnDismissListener {
+        OnPreferenceChangeListener, DialogInterface.OnDismissListener, Indexable {
 
     private final static String[] sSupportedActions = new String[] {
         "org.adw.launcher.THEMES",
@@ -84,22 +87,22 @@ public class StockRecents extends SettingsPreferenceFragment implements
     };
 
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
-    private static final String IMMERSIVE_RECENTS = "immersive_recents"; 
-    private static final String RECENTS_DATE = "recents_full_screen_date"; 
-    private static final String RECENTS_CLOCK = "recents_full_screen_clock"; 
+    private static final String IMMERSIVE_RECENTS = "immersive_recents";
+    private static final String RECENTS_DATE = "recents_full_screen_date";
+    private static final String RECENTS_CLOCK = "recents_full_screen_clock";
     private static final String CUSTOM_STYLE = "clear_recents_style_enable";
     private static final String RECENTS_STYLE = "clear_recents_style";
 
-    private ListPreference mImmersiveRecents; 
+    private ListPreference mImmersiveRecents;
     private ListPreference mRecentsClearAllLocation;
     private SwitchPreference mRecentsClearAll;
-    private SwitchPreference mClock; 
-    private SwitchPreference mDate; 
+    private SwitchPreference mClock;
+    private SwitchPreference mDate;
     private ListPreference mClearStyle;
     private SystemSettingMasterSwitchPreference mCustomStyle;
 
-    private SharedPreferences mPreferences; 
-    private Context mContext; 
+    private SharedPreferences mPreferences;
+    private Context mContext;
     private AlertDialog mDialog;
     private ListView mListView;
 
@@ -110,7 +113,7 @@ public class StockRecents extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.stock_recents);
 
         ContentResolver resolver = getActivity().getContentResolver();
-        mContext = getActivity().getApplicationContext(); 
+        mContext = getActivity().getApplicationContext();
 
         // clear all recents
         mRecentsClearAllLocation = (ListPreference) findPreference(RECENTS_CLEAR_ALL_LOCATION);
@@ -120,12 +123,12 @@ public class StockRecents extends SettingsPreferenceFragment implements
         mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
         mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
 
-        mImmersiveRecents = (ListPreference) findPreference(IMMERSIVE_RECENTS); 
+        mImmersiveRecents = (ListPreference) findPreference(IMMERSIVE_RECENTS);
         int mode = Settings.System.getInt(getContentResolver(), 
-        Settings.System.IMMERSIVE_RECENTS, 0); 
-            mImmersiveRecents.setValue(String.valueOf(mode)); 
-        mImmersiveRecents.setSummary(mImmersiveRecents.getEntry()); 
-        mImmersiveRecents.setOnPreferenceChangeListener(this); 
+        Settings.System.IMMERSIVE_RECENTS, 0);
+            mImmersiveRecents.setValue(String.valueOf(mode));
+        mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
+        mImmersiveRecents.setOnPreferenceChangeListener(this);
 
         mCustomStyle = (SystemSettingMasterSwitchPreference) findPreference(CUSTOM_STYLE);
         mCustomStyle.setOnPreferenceChangeListener(this);
@@ -139,18 +142,18 @@ public class StockRecents extends SettingsPreferenceFragment implements
         mClearStyle.setSummary(mClearStyle.getEntry());
         mClearStyle.setOnPreferenceChangeListener(this);
 
-        mClock = (SwitchPreference) findPreference(RECENTS_CLOCK); 
-        mDate = (SwitchPreference) findPreference(RECENTS_DATE); 
-        updateDisablestate(mode); 
+        mClock = (SwitchPreference) findPreference(RECENTS_CLOCK);
+        mDate = (SwitchPreference) findPreference(RECENTS_DATE);
+        updateDisablestate(mode);
     }
 
     public void updateDisablestate(int mode) { 
         if (mode == 0 || mode == 2) { 
-           mClock.setEnabled(false); 
-           mDate.setEnabled(false); 
+           mClock.setEnabled(false);
+           mDate.setEnabled(false);
         } else { 
-           mClock.setEnabled(true); 
-           mDate.setEnabled(true); 
+           mClock.setEnabled(true);
+           mDate.setEnabled(true);
         } 
     }
 
@@ -169,7 +172,7 @@ public class StockRecents extends SettingsPreferenceFragment implements
                     Settings.System.CLEAR_RECENTS_STYLE_ENABLE, enabled ? 1 : 0);
             return true;
         } else if (preference == mImmersiveRecents) {
-            int mode = Integer.valueOf((String) objValue); 
+            int mode = Integer.valueOf((String) objValue);
             Settings.System.putIntForUser(getActivity().getContentResolver(), Settings.System.IMMERSIVE_RECENTS,
                     Integer.parseInt((String) objValue), UserHandle.USER_CURRENT);
             mImmersiveRecents.setValue((String) objValue);
@@ -186,9 +189,9 @@ public class StockRecents extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mClearStyle) { 
             Settings.System.putInt(getContentResolver(), Settings.System.CLEAR_RECENTS_STYLE, 
-                    Integer.valueOf((String) objValue)); 
-            mClearStyle.setValue(String.valueOf(objValue)); 
-            mClearStyle.setSummary(mClearStyle.getEntry()); 
+                    Integer.valueOf((String) objValue));
+            mClearStyle.setValue(String.valueOf(objValue));
+            mClearStyle.setSummary(mClearStyle.getEntry());
         }
         return false;
     }
@@ -200,7 +203,7 @@ public class StockRecents extends SettingsPreferenceFragment implements
                 .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() { 
                         public void onClick(DialogInterface dialog, int whichButton) { 
                         } 
-                }).show(); 
+                }).show();
     }
 
     @Override
@@ -373,4 +376,28 @@ public class StockRecents extends SettingsPreferenceFragment implements
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.HAVOC_SETTINGS;
     }
+
+    /**
+     * For Search.
+     */
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.stock_recents;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    final List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }

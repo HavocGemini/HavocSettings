@@ -30,8 +30,11 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.ListPreference;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
+import android.provider.SearchIndexableResource;
 
 import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.Utils;
@@ -40,8 +43,11 @@ import com.havoc.support.preferences.CustomSeekBarPreference;
 import com.havoc.settings.preferences.AppChooserAdapter.AppItem;
 import com.havoc.settings.preferences.AppChooserDialog;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CarbonGesturesSettings extends SettingsPreferenceFragment
-        implements Preference.OnPreferenceChangeListener {
+        implements Preference.OnPreferenceChangeListener, Indexable {
     private static final String TAG = "CarbonGestures";
     private CustomSeekBarPreference mCarbonGestureFingers;
     private ListPreference mCarbonGestureRight;
@@ -224,4 +230,28 @@ public class CarbonGesturesSettings extends SettingsPreferenceFragment
 
         return false;
     }
+
+    /**
+     * For Search.
+     */
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.carbongestures;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    final List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }

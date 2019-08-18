@@ -27,6 +27,7 @@ import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.provider.SearchIndexableResource;
 
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -37,13 +38,15 @@ import java.util.Map;
 
 
 import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.havoc.support.preferences.SystemSettingSwitchPreference;
 import com.havoc.support.preferences.CustomSeekBarPreference;
 import com.android.internal.logging.nano.MetricsProto;
 
 public class QsHeader extends SettingsPreferenceFragment 
-             implements Preference.OnPreferenceChangeListener{
+             implements Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String CUSTOM_HEADER_BROWSE = "custom_header_browse";
     private static final String DAYLIGHT_HEADER_PACK = "daylight_header_pack";
@@ -229,5 +232,28 @@ public class QsHeader extends SettingsPreferenceFragment
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.HAVOC_SETTINGS;
     }
+
+    /**
+     * For Search.
+     */
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.qs_header;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    final List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }
-   

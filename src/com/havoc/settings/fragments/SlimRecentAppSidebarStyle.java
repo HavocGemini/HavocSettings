@@ -15,20 +15,26 @@
  */
 package com.havoc.settings.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.provider.SearchIndexableResource;
 import android.support.v7.preference.Preference;
 
 import com.android.internal.logging.nano.MetricsProto; 
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.settings.R;
-
 import com.havoc.support.colorpicker.ColorPickerPreference;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SlimRecentAppSidebarStyle extends SettingsPreferenceFragment
-        implements Preference.OnPreferenceChangeListener {
+        implements Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String RECENT_APP_SIDEBAR_TEXT_COLOR = "recent_app_sidebar_text_color";
     private static final String RECENT_APP_SIDEBAR_BG_COLOR = "recent_app_sidebar_bg_color";
@@ -103,4 +109,28 @@ public class SlimRecentAppSidebarStyle extends SettingsPreferenceFragment
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.HAVOC_SETTINGS;
     }
+
+    /**
+     * For Search.
+     */
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.slim_recent_app_sidebar_style;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    final List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }

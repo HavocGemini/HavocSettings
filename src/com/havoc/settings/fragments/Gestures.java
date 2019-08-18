@@ -29,6 +29,7 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
+import android.provider.SearchIndexableResource;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
@@ -36,16 +37,21 @@ import android.view.View;
 import android.view.WindowManagerGlobal;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.internal.util.hwkeys.ActionUtils; 
+import com.android.internal.util.hwkeys.ActionUtils;
 
 import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.havoc.support.preferences.CustomSeekBarPreference;
 import com.havoc.support.preferences.SecureSettingMasterSwitchPreference;
 import com.havoc.support.preferences.SystemSettingMasterSwitchPreference;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Gestures extends SettingsPreferenceFragment implements
-         OnPreferenceChangeListener {
+         OnPreferenceChangeListener, Indexable {
 
     private static final String USE_BOTTOM_GESTURE_NAVIGATION = "use_bottom_gesture_navigation";
     private static final String EDGE_GESTURES_ENABLED = "edge_gestures_enabled";
@@ -54,9 +60,9 @@ public class Gestures extends SettingsPreferenceFragment implements
     private static final String GESTURE_ANYWHERE_ENABLED = "gesture_anywhere_enabled";
 
     private SystemSettingMasterSwitchPreference mUseBottomGestureNavigation;
-    private SecureSettingMasterSwitchPreference mEdgeGesturesEnabled; 
-    private SecureSettingMasterSwitchPreference mPieGestureEnabled; 
-    private SystemSettingMasterSwitchPreference mGestureAnywhereEnabled; 
+    private SecureSettingMasterSwitchPreference mEdgeGesturesEnabled;
+    private SecureSettingMasterSwitchPreference mPieGestureEnabled;
+    private SystemSettingMasterSwitchPreference mGestureAnywhereEnabled;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -106,21 +112,21 @@ public class Gestures extends SettingsPreferenceFragment implements
 		            USE_BOTTOM_GESTURE_NAVIGATION, value ? 1 : 0);
             return true;
         } else if (preference == mEdgeGesturesEnabled) { 
-            int enabled = ((boolean) newValue) ? 1 : 0; 
+            int enabled = ((boolean) newValue) ? 1 : 0;
             Settings.Secure.putIntForUser(resolver,
-                    Settings.Secure.EDGE_GESTURES_ENABLED, enabled, UserHandle.USER_CURRENT); 
+                    Settings.Secure.EDGE_GESTURES_ENABLED, enabled, UserHandle.USER_CURRENT);
             if (enabled == 1) { 
                 Settings.Secure.putInt(resolver, 
                         Settings.Secure.NAVIGATION_BAR_VISIBLE, 
-                        0); 
+                        0);
             } else { 
                 if (ActionUtils.hasNavbarByDefault(getPrefContext())) { 
                     Settings.Secure.putInt(resolver, 
                             Settings.Secure.NAVIGATION_BAR_VISIBLE, 
-                            1); 
+                            1);
                 } 
             } 
-            return true; 
+            return true;
         } else if (preference == mPieGestureEnabled) {
             boolean value = (Boolean) newValue;
             Settings.Secure.putInt(resolver, PIE_STATE, value ? 1 : 0);
@@ -137,4 +143,28 @@ public class Gestures extends SettingsPreferenceFragment implements
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.HAVOC_SETTINGS;
     }
+
+    /**
+     * For Search.
+     */
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.havoc_settings_gestures;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    final List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }

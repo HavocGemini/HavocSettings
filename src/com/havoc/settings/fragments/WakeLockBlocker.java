@@ -300,5 +300,4 @@ public class WakeLockBlocker extends SettingsPreferenceFragment {
                 return false;
         }
     }
-
 }

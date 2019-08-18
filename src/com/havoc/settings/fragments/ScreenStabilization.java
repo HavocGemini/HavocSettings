@@ -31,17 +31,23 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
+import android.provider.SearchIndexableResource;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.R; 
+import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.support.preferences.SecureSettingSwitchPreference;
 import com.havoc.support.preferences.CustomSeekBarPreference;
 import com.havoc.support.preferences.SystemSettingSwitchPreference;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ScreenStabilization extends SettingsPreferenceFragment implements 
-        Preference.OnPreferenceChangeListener {
+        Preference.OnPreferenceChangeListener, Indexable {
 
     public static final String TAG = "ScreenStabilization";
 
@@ -54,8 +60,8 @@ public class ScreenStabilization extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.screen_stabilization); 
-        resolver = getActivity().getContentResolver();   
+        addPreferencesFromResource(R.xml.screen_stabilization);
+        resolver = getActivity().getContentResolver();
 
         float velFriction = Settings.System.getFloatForUser(resolver,
                 Settings.System.STABILIZATION_VELOCITY_FRICTION, 0.1f,
@@ -79,7 +85,7 @@ public class ScreenStabilization extends SettingsPreferenceFragment implements
         mVelocityAmplitude = (ListPreference) findPreference("stabilization_velocity_amplitude");
     	mVelocityAmplitude.setValue(Integer.toString(velAmplitude));
     	mVelocityAmplitude.setSummary(mVelocityAmplitude.getEntry());
-    	mVelocityAmplitude.setOnPreferenceChangeListener(this);   
+    	mVelocityAmplitude.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -99,7 +105,7 @@ public class ScreenStabilization extends SettingsPreferenceFragment implements
     			    UserHandle.USER_CURRENT);
     	    }
     	}
-        return false; 
+        return false;
     }
 
     private String getSystemPreferenceString(Preference preference) {
@@ -119,4 +125,28 @@ public class ScreenStabilization extends SettingsPreferenceFragment implements
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.HAVOC_SETTINGS;
     }
+
+    /**
+     * For Search.
+     */
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.screen_stabilization;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    final List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }

@@ -16,7 +16,6 @@
 package com.havoc.settings.fragments;
 
 import android.os.Bundle;
-
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 

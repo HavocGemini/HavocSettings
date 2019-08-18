@@ -16,7 +16,7 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/pa_pie_control_title">
+    android:title="@string/pa_pie_control_title">
 
     <ListPreference
         android:key="pie_theme_mode"

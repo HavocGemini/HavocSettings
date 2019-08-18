@@ -31,6 +31,7 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.provider.SearchIndexableResource;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
@@ -39,6 +40,8 @@ import android.widget.RadioButton;
 import android.widget.ListView;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.havoc.settings.R;
 import com.havoc.support.preferences.PackageListAdapter;
@@ -51,7 +54,7 @@ import java.util.Map;
 import java.util.List;
 
 public class SlimRecentsBlacklist extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceClickListener {
+        Preference.OnPreferenceClickListener, Indexable {
 
     private static final String TAG = "SlimRecentsBlacklist";
 
@@ -291,4 +294,28 @@ public class SlimRecentsBlacklist extends SettingsPreferenceFragment implements
         Settings.System.putString(getActivity().getContentResolver(),
                 setting, value);
     }
+
+    /**
+     * For Search.
+     */
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.slim_recents_blacklist;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    final List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }
