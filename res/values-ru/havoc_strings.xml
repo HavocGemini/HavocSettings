@@ -283,11 +283,14 @@
     <string name="summary_dashboard_suggestions_enabled">Рекомендации в меню настроек включены</string>
     <string name="summary_dashboard_suggestions_disabled">Рекомендации в меню настроек выключены</string>
     <!-- Enable keys backlight-->
-    <string name="button_brightness_title">Кнопки яркости подсветки</string>
-    <!-- Enable keys backlight-->
-    <string name="button_brightness_sw_title">Включить подсветку</string>
-    <string name="button_backlight_on_touch_only_title">Подсветка кнопок при нажатии</string>
-    <string name="button_backlight_on_touch_only_summary">Включить подсветку только при нажатии кнопки</string>
+    <string name="button_backlight_options_category">Подсветка кнопок</string>
+    <string name="button_backlight_enable_title">Включить подсветку</string>
+    <string name="button_backlight_on_touch_only_title">Подсветка по прикосновению к кнопкам</string>
+    <string name="button_backlight_on_touch_only_summary">Подсвечивать кнопки только при касании, а не всё время. Тайм-аут подсветки влияет на эту функцию.</string>
+    <string name="button_timeout_title">Время работы подсветки</string>
+    <string name="button_link_brightness">В соответствии с экраном</string>
+    <string name="button_link_brightness_summary">Использовать яркость экрана</string>
+    <string name="button_manual_brightness">Уровень яркости</string>
     <!-- HW Keys customization -->
     <string name="picker_activities">Деятельность</string>
     <string name="select_custom_app_title">Выбрать приложение</string>

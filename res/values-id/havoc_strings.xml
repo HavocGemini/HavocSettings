@@ -95,7 +95,6 @@
     <string name="statusbar_logo_cat">Logo</string>
     <string name="hafr_title">Sembunyikan App dari Daftar Terkini</string>
     <string name="immersive_recent_title">Aktivitas Terkini</string>
-    <string name="recent_button_title">Daftar Terkini Bawaan</string>
     <string name="notification_lights">Lampu</string>
     <string name="notification_messages">Pemberitahuan Sistem</string>
     <string name="notification_heads">Notifikasi mengambang</string>
@@ -155,9 +154,7 @@
     <string name="face_auto_unlock_summary">Tutup layar kunci setelah membuka kunci wajah</string>
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">Animasi layar mati</string>
-    <string name="screen_off_animation_summary">%1$s</string>
     <string name="screen_off_animation_fade">Pudar</string>
-    <string name="screen_off_animation_color">Warna memudar</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Skala</string>
     <!-- Force expanded notifications -->
@@ -396,8 +393,6 @@
     <!-- Heads up -->
     <string name="heads_up_notifications">Notifikasi mengambang</string>
     <string name="heads_up_notifications_summary">Menyesuaikan pengaturan tambahan untuk notifikasi mengambang</string>
-    <string name="summary_heads_up_enabled">Pemberitahuan pop-up diaktifkan</string>
-    <string name="summary_heads_up_disabled">Pemberitahuan pop-up dinonaktifkan</string>
     <string name="add_heads_up_package">Tambahkan apl</string>
     <string name="add_heads_up_stoplist_summary">Matikan pemberitahuan mengambang di aplikasi ini</string>
     <string name="add_heads_up_blacklist_summary">Matikan notifikasi mengambang dari aplikasi ini</string>
@@ -436,8 +431,6 @@
     <!-- Smart Pixels -->
     <string name="smart_pixels_title">Piksel Cerdas</string>
     <string name="smart_pixels_summary">Hemat baterai dengan mematikan piksel ekstra</string>
-    <string name="smart_pixels_enable_title">Hidupkan Piksel Cerdas</string>
-    <string name="smart_pixels_enable_summary">Matikan Piksel untuk mengurangi konsumsi daya</string>
     <string name="smart_pixels_on_power_save_title">Aktifkan otomatis pada penghemat baterai</string>
     <string name="smart_pixels_on_power_save_summary">Aktifkan Piksel Cerdas saat penghemat baterai diaktifkan</string>
     <string name="smart_pixels_percent">Persentase piksel untuk dinonaktifkan</string>
@@ -519,12 +512,6 @@
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Blok sensor per-paket</string>
     <string name="sensor_block_summary">Blokir akses ke sensor tertentu untuk beberapa aplikasi untuk menghemat baterai</string>
-    <!-- Activity Blacklist -->
-    <string name="chooser_activity_blacklist_title">Pemilih aktifitas yang diblokir</string>
-    <string name="chooser_activity_blacklist_summary">Aplikasi untuk tidak ditampilkan saat mengetuk tombol Bagikan</string>
-    <string name="chooser_activity_blacklist_cat_title">Daftar Cekal</string>
-    <string name="chooser_activity_blacklist_pref_title">Tambahkan apl</string>
-    <string name="chooser_activity_blacklist_pref_summary">Ketuk disini untuk menambah, tekan pada aplikasi yang telah ditambahkan untuk menghapusnya</string>
     <!-- Battery percentage -->
     <string name="battery_style_category_title">Ikon Baterai</string>
     <string name="battery_style_category_summary">Sesuaikan jenis cuaca pada bilah status</string>
@@ -602,20 +589,12 @@
     <string name="hardware_keys_power_category">Tombol power</string>
     <string name="torch_long_press_power_gesture_title">Layar mati tombol power senter</string>
     <string name="torch_long_press_power_gesture_desc">Tekan tombol power lama saat layar mati untuk menyalakan lampu senter</string>
-    <string name="torch_long_press_power_timeout_title">Matikan senter secara otomatis</string>
-    <string name="torch_long_press_power_timeout_never">Tidak pernah</string>
-    <string name="torch_long_press_power_timeout_1min">1 menit</string>
-    <string name="torch_long_press_power_timeout_2min">2 menit</string>
-    <string name="torch_long_press_power_timeout_5min">5 menit</string>
-    <string name="torch_long_press_power_timeout_10min">10 menit</string>
     <!-- MediaScanner behavior on boot -->
     <string name="media_scanner_on_boot_title">Perilaku Pemindai Media saat boot</string>
     <string name="media_scanner_on_boot_enabled">Pindai media</string>
     <string name="media_scanner_on_boot_ask">Meminta untuk memindai (notifikasi)</string>
     <string name="media_scanner_on_boot_disabled">Jangan memindai media</string>
     <!-- Custom carrier label and position -->
-    <string name="carrier_label_category_title">Label Operator</string>
-    <string name="carrier_label_category_summary">Kustomisasi label operator</string>
     <string name="carrier_label_settings_title">Label Operator</string>
     <string name="carrier_label_settings_summary">Kustomisasi label operator</string>
     <string name="custom_carrier_label_title">Kustom label operator</string>
@@ -632,8 +611,6 @@
     <string name="status_bar_carrier_color">Warna label operator</string>
     <!-- Screen Stabilization -->
     <string name="screen_stabilization_title">Stabilisasi Layar</string>
-    <string name="screen_stabilization_enable">Mengaktifkan stabilisasi layar</string>
-    <string name="screen_stabilization_enable_summary">Tinggalkan nilai di bawah seperti jika Anda tidak mengerti apa artinya.</string>
     <string name="stabilization_velocity_friction_title">Gesekan kecepatan</string>
     <string name="stabilization_position_friction_title">Posisi gesekan</string>
     <string name="stabilization_velocity_amplitude_title">Kecepatan amplitudo</string>
@@ -847,10 +824,6 @@
     <string name="handwave_summary">Kedipkan pemberitahuan saat mengguncangkan tangan</string>
     <string name="pocket_title">Saku</string>
     <string name="pocket_summary">Kedipkan pemberitahuan saat berpindah dari saku</string>
-    <string name="doze_vibrate">Getar</string>
-    <string name="doze_vibrate_summary">Durasi bergetar ketika pemberitahuan berbunyi</string>
-    <string name="sensor_warning_title">Perhatian</string>
-    <string name="sensor_warning_message">Pengaturan berdasarkan sensor tergantung kompatibilitas perangkat keras. sensor tampilan ambien dapat mempercepat pengurasan daya.</string>
     <!-- Quick pull down-->
     <string name="quick_pulldown_title">Keruntuhan cepat</string>
     <string name="quick_pulldown_summary">%1$s tepi dari status bar menarik penyetelan cepat</string>
@@ -965,9 +938,6 @@
     <string name="recents_fab_vibrate">Bergetar saat tombol hapus semua di tekan</string>
     <string name="recents_fab_vibrate_summary">Mengaktifkan / menonaktifkan haptic feedback dari tombol Abaikan semua</string>
     <string name="fab_animation_style">Animasi tombol mengambang</string>
-    <string name="recents_fab_lp">Aktifkan tekan lama pada tombol mengambang</string>
-    <string name="recents_fab_lp_summary">Menekan agak lama akan memperbarui bilah memori jika ada</string>
-    <string name="recents_fab_lp_anim">Animasi menekan lama pada FAB</string>
     <string name="clear_animation_style">Animasi tombol hapus semua</string>
     <string name="button1">Standar</string>
     <string name="button2">Centang kotak persegi</string>
@@ -1053,7 +1023,6 @@
     <!-- Weather -->
     <string name="weather_unit">Satuan temperatur</string>
     <!-- Statusbar ticker -->
-    <string name="status_bar_ticker_title">Notifikasi ticker</string>
     <string name="status_bar_show_ticker_title">Ticker</string>
     <string name="status_bar_show_ticker_summary">Tinjauan notifikasi di bilah status</string>
     <string name="ticker_animation_mode_title">Animasi ticker</string>
