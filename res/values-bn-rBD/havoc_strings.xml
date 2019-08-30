@@ -912,7 +912,7 @@
     <string name="recents_go">অ্যান্ড্রয়েড গো</string>
     <string name="recents_slim">পাতলা</string>
     <!-- AOSP Recents -->
-    <string name="aosp_first_time_title">এওএসপি রিটারেন্টস</string>
+    <string name="aosp_first_time_title">এওএসপি রিসেন্ট</string>
     <string name="aosp_first_time_message">যদি বর্ধিত ডেস্কটপ সক্ষম থাকে তবে ডুবে যাওয়া রিেন্টস সেটিংটি ওভাররাইড করা হয়।</string>
     <!-- Immersive Recents -->
     <string name="immersive_recents_title">নিমজ্জন মোড</string>
@@ -1091,13 +1091,13 @@
     <string name="power_menu_animation_translucent_bottom">স্বচ্ছ (নীচে)</string>
     <string name="power_menu_animation_rotate">আবর্তিত</string>
     <!-- Breathing Notifications -->
-    <string name="breathing_notifications_category">শ্বাস নোটিফিকেশন</string>
-    <string name="breathing_notifications_title">শ্বাস নোটিফিকেশন</string>
-    <string name="sms_breath_title">শ্বাস প্রশ্বাসের এসএমএস</string>
+    <string name="breathing_notifications_category">শ্বাস ফেলা নোটিফিকেশন</string>
+    <string name="breathing_notifications_title">শ্বাস ফেলা নোটিফিকেশন</string>
+    <string name="sms_breath_title">শ্বাস ফেলা এসএমএস</string>
     <string name="sms_breath_summary">আপনার এসএমএস বিজ্ঞপ্তিগুলি স্ট্যাটাস বারে একটি শ্বাস প্রশ্বাসের প্রভাব দেবে</string>
     <string name="missed_call_breath_title">শ্বাস ফেলা মিসড কল</string>
     <string name="missed_call_breath_summary">আপনার মিস কল বিজ্ঞপ্তিগুলি স্ট্যাটাসবারে একটি শ্বাস প্রশ্বাসের প্রভাব দেবে</string>
-    <string name="voicemail_breath_title">শ্বাস ভয়েস মেল</string>
+    <string name="voicemail_breath_title">শ্বাস ফেলা ভয়েস মেল</string>
     <string name="voicemail_breath_summary">আপনার ভয়েসমেইল বিজ্ঞপ্তিগুলি স্ট্যাটাসবারে একটি শ্বাস প্রশ্বাসের প্রভাব দেবে</string>
     <!-- Immersive mode messages -->
     <string name="disable_immersive_message_title">নিমজ্জন মোড বার্তা</string>
@@ -1152,7 +1152,7 @@
     <!-- Stock recents -->
     <string name="recents_settings_title">সেটিংস</string>
     <string name="stock_recents_title">স্টক রিসেন্টস</string>
-    <string name="stock_recents_summary">স্টক রিটারেন্টগুলির জন্য অতিরিক্ত সেটিংস কাস্টমাইজ করুন</string>
+    <string name="stock_recents_summary">স্টক রিসেন্টগুলির জন্য অতিরিক্ত সেটিংস কাস্টমাইজ করুন</string>
     <!-- Slim recents -->
     <string name="slim_recents_title">স্লিম রিসেন্টস</string>
     <string name="slim_recents_summary">একটি বিকল্প রেন্টস স্ক্রিন ব্যবহার করতে সক্ষম করুন</string>
@@ -1196,13 +1196,13 @@
     <string name="recent_app_sidebar_label_color_title">লেবেলের রঙ</string>
     <string name="recent_app_sidebar_bg_color_title">পেছনের রং</string>
     <string name="recent_app_sidebar_scale_title">আয়তন</string>
-    <string name="recent_app_sidebar_open_simultaneously_title">রিটারেন্ট সহ এক সাথে খুলুন</string>
+    <string name="recent_app_sidebar_open_simultaneously_title">রিসেন্ট সহ এক সাথে খুলুন</string>
     <string name="recent_app_sidebar_open_simultaneously_summary">এটি অক্ষম করে রিটেন্ট খোলার হ্রাস করুন</string>
     <string name="default_auto_string">ডিফল্ট (অ্যাপ ভিত্তিক)</string>
     <!-- Slim recents membar -->
     <string name="slim_recents_mem_display_category_title">মেমরি বার</string>
     <string name="slim_recents_mem_display_title">মেমরি বার</string>
-    <string name="slim_recents_mem_display_summary">র‌্যাম প্রদর্শনের জন্য একটি অগ্রগতি বার দেখান</string>
+    <string name="slim_recents_mem_display_summary">RAM প্রদর্শনের জন্য একটি অগ্রগতি বার দেখান</string>
     <string name="slim_recents_mem_display_color">মেমোরি বারের রঙ</string>
     <string name="slim_recents_mem_display_text_color">মেমরি বারের পাঠ্যের রঙ</string>
     <string name="usb_default_config_title">ইউএসবি কনফিগারেশন</string>
@@ -1240,12 +1240,12 @@
     <!-- Lockscreen clock styles -->
     <string name="lockscreen_clock_selection_title">ঘড়ির স্টাইল</string>
     <string name="lockscreen_clock_selection_digital">ডিফল্ট</string>
-    <string name="lockscreen_clock_selection_digital_bold">ডিজিটাল (সাহসী)</string>
+    <string name="lockscreen_clock_selection_digital_bold">ডিজিটাল (গাঢ়)</string>
     <string name="lockscreen_clock_selection_digital_accent">ডিজিটাল (অ্যাকসেন্ট)</string>
     <string name="lockscreen_clock_selection_digital_accent_min">ডিজিটাল (অ্যাকসেন্ট - মিনিট)</string>
     <string name="lockscreen_clock_selection_digital_accent_hour">ডিজিটাল (অ্যাকসেন্ট - ঘন্টা)</string>
     <string name="lockscreen_clock_selection_sammy">স্যামি</string>
-    <string name="lockscreen_clock_selection_sammy_bold">স্যামি (সাহসী)</string>
+    <string name="lockscreen_clock_selection_sammy_bold">স্যামি (গাঢ়)</string>
     <string name="lockscreen_clock_selection_sammy_accent">স্যামি (অ্যাকসেন্ট)</string>
     <string name="lockscreen_clock_selection_sammy_accent_alt">স্যামি (অ্যাকসেন্ট - আল্ট)</string>
     <string name="lockscreen_clock_selection_analog">অ্যানালগ (গভীর রাত)</string>
