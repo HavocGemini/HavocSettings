@@ -141,7 +141,7 @@
 	<string name="powermenu_reboot_title">রিবুট</string>
 	<string name="powermenu_airplane_title">বিমান মোড</string>
 	<string name="powermenu_advanced_reboot_title">উন্নত পুনরায় বুট করুন</string>
-	<string name="powermenu_advanced_reboot_summary">রিবুট বিকল্পগুলির জন্য উন্নত পুনরায় বুট মেনু সক্ষম করে</string>
+	<string name="powermenu_advanced_reboot_summary">রিবুট বিকল্পগুলির জন্য উন্নত রিবুট মেনু সক্ষম করুন</string>
 	<string name="powermenu_screenshot_title">স্ক্রিনশট</string>
 	<string name="powermenu_screenrecord_title">স্ক্রিন রেকর্ড করা</string>
 	<string name="powermenu_category_visibility">লকস্ক্রিন বিকল্পগুলি</string>
@@ -476,7 +476,7 @@
 	<!-- Ambient display battery percentage -->
 	<string name="ambient_battery_percent_title">ব্যাটারি স্তর</string>
 	<string name="ambient_battery_percent_summary">ঝিমুনি সময় নীচে ব্যাটারি শতাংশ দেখান</string>
-	<string name="doze_display_title">পরিবেষ্টিত ডিসপ্লে</string>
+	<string name="doze_display_title">অ্যাম্বিয়েন্ট ডিসপ্লে</string>
 	<!-- Wakeup options -->
 	<string name="wakeup_when_plugged_unplugged_title">দায়িত্বে জেগে</string>
 	<string name="wakeup_when_plugged_unplugged_summary">চার্জারটি প্লাগ করা / প্লাগ লাগানো থাকলে ডিভাইসটি জাগ্রত করুন।</string>
@@ -671,7 +671,7 @@
 	<string name="battery_bar_charging_color">চার্জ করা রঙ</string>
 	<string name="battery_bar_battery_low_color">ব্যাটারির রঙ কম</string>
 	<string name="battery_bar_style_title">শৈলী</string>
-	<string name="battery_bar_thickness_title">বেধ</string>
+	<string name="battery_bar_thickness_title">পুরুত্ব</string>
 	<string name="battery_bar_thickness_summary">%1$s</string>
 	<string name="battery_bar_animate_title">চার্জ অ্যানিমেশন</string>
 	<string name="battery_bar_animate_summary">চার্জ করার সময় ব্যাটারি বারটি অ্যানিমেট করুন</string>
@@ -953,14 +953,14 @@
 	<string name="button1">ডিফল্ট</string>
 	<string name="button2">স্কয়ার চেকবক্স</string>
 	<string name="button3">চিত্রলেখ</string>
-	<string name="button4">উল্লম্ব লাইনগুলি ঘ</string>
+	<string name="button4">উল্লম্ব লাইন 1</string>
 	<string name="button5">উল্লম্ব লাইন 2</string>
 	<string name="button6">ক্লিপবোর্ড</string>
 	<string name="button7">রং</string>
 	<string name="button8">অনুভূমিক রেখা</string>
 	<string name="button9">বিজ্ঞপ্তি চেকবাক্স</string>
 	<string name="button10">মুছে ফেলা সোয়াইপ</string>
-	<string name="button11">বড় না দ্বীন বড়</string>
+	<string name="button11">Zzzzz</string>
 	<string name="button12">চোখ বন্ধ</string>
 	<string name="button13">বাটনের মত</string>
 	<string name="button14">সোয়াইপ কিউব</string>
@@ -984,8 +984,8 @@
 	<string name="animation3">আড়াআড়ি প্রস্থান রিবন</string>
 	<string name="animation4">টোস্ট প্রস্থান</string>
 	<string name="animation5">স্লাইড আউট ডাউন</string>
-	<string name="animation6">জিলন প্রস্থান</string>
-	<string name="animation7">হনামি টোস্ট প্রস্থান</string>
+	<string name="animation6">Xylon প্রস্থান</string>
+	<string name="animation7">Honami টোস্ট প্রস্থান</string>
 	<string name="animation8">ডানদিকে স্লাইড</string>
 	<string name="animation9">টোস্ট প্রস্থান</string>
 	<string name="animation10">ফিড আউট ধীর</string>
@@ -1080,24 +1080,24 @@
 	<string name="power_menu_animation_summary">পাওয়ার মেনুর প্রবেশ / প্রস্থান অ্যানিমেশন পরিবর্তন করুন</string>
 	<string name="power_menu_animation_dialog_title">পাওয়ার মেনু অ্যানিমেশন নির্বাচন করুন</string>
 	<string name="power_menu_animation_aosp">ডিফল্ট</string>
-	<string name="power_menu_animation_bottom">পাদ</string>
+	<string name="power_menu_animation_bottom">নিম্ন</string>
 	<string name="power_menu_animation_top">শীর্ষ</string>
-	<string name="power_menu_animation_xylon">মাছি</string>
+	<string name="power_menu_animation_xylon">উড়ে যাওয়া</string>
 	<string name="power_menu_animation_slide">স্লাইড্</string>
-	<string name="power_menu_animation_turn">পালা</string>
-	<string name="power_menu_animation_fly">ভাস</string>
+	<string name="power_menu_animation_turn">ঘুরে যাওয়া</string>
+	<string name="power_menu_animation_fly">আভা</string>
 	<string name="power_menu_animation_card">3D</string>
 	<string name="power_menu_animation_translucent_top">স্বচ্ছ (উপরে)</string>
 	<string name="power_menu_animation_translucent_bottom">স্বচ্ছ (নীচে)</string>
 	<string name="power_menu_animation_rotate">আবর্তিত</string>
 	<!-- Breathing Notifications -->
-	<string name="breathing_notifications_category">শ্বাস নোটিফিকেশন</string>
-	<string name="breathing_notifications_title">শ্বাস নোটিফিকেশন</string>
-	<string name="sms_breath_title">শ্বাস প্রশ্বাসের এসএমএস</string>
+	<string name="breathing_notifications_category">শ্বাস ফেলা নোটিফিকেশন</string>
+	<string name="breathing_notifications_title">শ্বাস ফেলা নোটিফিকেশন</string>
+	<string name="sms_breath_title">শ্বাস ফেলা এসএমএস</string>
 	<string name="sms_breath_summary">আপনার এসএমএস বিজ্ঞপ্তিগুলি স্ট্যাটাস বারে একটি শ্বাস প্রশ্বাসের প্রভাব দেবে</string>
 	<string name="missed_call_breath_title">শ্বাস ফেলা মিসড কল</string>
 	<string name="missed_call_breath_summary">আপনার মিস কল বিজ্ঞপ্তিগুলি স্ট্যাটাসবারে একটি শ্বাস প্রশ্বাসের প্রভাব দেবে</string>
-	<string name="voicemail_breath_title">শ্বাস ভয়েস মেল</string>
+	<string name="voicemail_breath_title">শ্বাস ফেলা ভয়েস মেল</string>
 	<string name="voicemail_breath_summary">আপনার ভয়েসমেইল বিজ্ঞপ্তিগুলি স্ট্যাটাসবারে একটি শ্বাস প্রশ্বাসের প্রভাব দেবে</string>
 	<!-- Immersive mode messages -->
 	<string name="disable_immersive_message_title">নিমজ্জন মোড বার্তা</string>
@@ -1105,11 +1105,11 @@
 	<!-- Volume dialog timeout -->
 	<string name="volume_dialog_timeout_title">ভলিউম কথোপকথনের সময়সীমা</string>
 	<!-- Volume keys control rint tone stream -->
-	<string name="volume_keys_control_ring_tone_title">রিংয়ের আয়তন নিয়ন্ত্রণ করুন</string>
+	<string name="volume_keys_control_ring_tone_title">রিংয়ের ভলিউম নিয়ন্ত্রণ করুন</string>
 	<string name="volume_keys_control_ring_tone_summary">মিডিয়া ভলিউমের পরিবর্তে ভলিউম কীগুলির সাথে রিংয়ের ভলিউম নিয়ন্ত্রণ করুন</string>
 	<!-- Notification guts kill app button -->
-	<string name="notification_guts_kill_app_button_title">অ্যাপ্লিকেশন বোতামটি হত্যা করুন</string>
-	<string name="notification_guts_kill_app_button_summary">বিজ্ঞপ্তির লম্বপ্রেস মেনুতে একটি কিল অ্যাপ্লিকেশন বোতামটি দেখান</string>
+	<string name="notification_guts_kill_app_button_title">অ্যাপ্লিকেশন বোতামটি কিল করুন</string>
+	<string name="notification_guts_kill_app_button_summary">বিজ্ঞপ্তির লম্বপ্রেস মেনুতে একটি কিল অ্যাপ্লিকেশন বোতাম দেখান</string>
 	<!-- Settings dashboard icon style -->
 	<string name="theming_settings_dashboard_icons_title">ড্যাশবোর্ড আইকন</string>
 	<string name="theming_settings_dashboard_icons_default">বৃত্তাকার</string>
@@ -1152,14 +1152,14 @@
 	<!-- Stock recents -->
 	<string name="recents_settings_title">সেটিংস</string>
 	<string name="stock_recents_title">স্টক রিসেন্টস</string>
-	<string name="stock_recents_summary">স্টক রিটারেন্টগুলির জন্য অতিরিক্ত সেটিংস কাস্টমাইজ করুন</string>
+	<string name="stock_recents_summary">স্টক রিসেন্টগুলির জন্য অতিরিক্ত সেটিংস কাস্টমাইজ করুন</string>
 	<!-- Slim recents -->
 	<string name="slim_recents_title">স্লিম রিসেন্টস</string>
-	<string name="slim_recents_summary">একটি বিকল্প রেন্টস স্ক্রিন ব্যবহার করতে সক্ষম করুন</string>
-	<string name="slim_recents_fragment_title">স্লিম রেন্টস সেটিংস</string>
-	<string name="slim_recents_fragment_summary">পাতলা রিেন্টের জন্য অতিরিক্ত সেটিংস কাস্টমাইজ করুন</string>
+	<string name="slim_recents_summary">একটি বিকল্প রিসেন্ট স্ক্রিন ব্যবহার করতে সক্ষম করুন</string>
+	<string name="slim_recents_fragment_title">স্লিম রিসেন্ট সেটিংস</string>
+	<string name="slim_recents_fragment_summary">স্লিম রিসেন্ট জন্য অতিরিক্ত সেটিংস কাস্টমাইজ করুন</string>
 	<string name="recents_max_apps_title">সর্বাধিক অনুমোদিত অ্যাপ্লিকেশন</string>
-	<string name="recent_panel_scale_title">আয়তন</string>
+	<string name="recent_panel_scale_title">আকার</string>
 	<string name="recent_panel_expanded_mode_title">প্রসারিত মোড</string>
 	<string name="recent_panel_expanded_mode_summary">সাম্প্রতিক কাজগুলি পূর্বরূপ মোডকে প্রসারিত করেছে</string>
 	<string name="recent_panel_expanded_mode_auto">অটো (ডিফল্ট)</string>
@@ -1202,7 +1202,7 @@
 	<!-- Slim recents membar -->
 	<string name="slim_recents_mem_display_category_title">মেমরি বার</string>
 	<string name="slim_recents_mem_display_title">মেমরি বার</string>
-	<string name="slim_recents_mem_display_summary">র‌্যাম প্রদর্শনের জন্য একটি অগ্রগতি বার দেখান</string>
+	<string name="slim_recents_mem_display_summary">RAM প্রদর্শনের জন্য একটি অগ্রগতি বার দেখান</string>
 	<string name="slim_recents_mem_display_color">মেমোরি বারের রঙ</string>
 	<string name="slim_recents_mem_display_text_color">মেমরি বারের পাঠ্যের রঙ</string>
 	<string name="usb_default_config_title">ইউএসবি কনফিগারেশন</string>
@@ -1359,8 +1359,8 @@
 	<!-- Torch Power button gestures -->
 	<string name="power_button_torch_gesture_title">স্ক্রিন বন্ধ অবস্থায় টর্চ</string>
 	<string name="power_button_torch_gesture_none">অক্ষম</string>
-	<string name="power_button_torch_gesture_dt">ডাবল আলতো চাপ শক্তি বোতাম</string>
-	<string name="power_button_torch_gesture_lp">দীর্ঘ প্রেস পাওয়ার বাটন</string>
+	<string name="power_button_torch_gesture_dt">দুই বার পাওয়ার বাটন চাপুন</string>
+	<string name="power_button_torch_gesture_lp">পাওয়ার বাটন চেপে রাখুন</string>
 	<!-- Adaptive icon shape -->
 	<string name="icon_shape_title">অ্যাপ্লিকেশন আইকন আকার</string>
 	<string name="icon_shape_system_default">সিস্টেমের ডিফল্ট</string>
@@ -1368,7 +1368,7 @@
 	<string name="icon_shape_rounded_square">গোলাকার বর্গাকার</string>
 	<string name="icon_shape_squircle">Squircle</string>
 	<string name="icon_shape_circle">বৃত্ত</string>
-	<string name="icon_shape_teardrop">অশ্রুবিঁদু</string>
+	<string name="icon_shape_teardrop">অশ্রুবিন্দু</string>
 	<string name="icon_shape_hexagon">হেক্সাগন</string>
 	<string name="icon_shape_changed_title">আইকন আকার আপডেট করুন</string>
 	<string name="icon_shape_changed_message">আইকন আকার পরিবর্তন করা শুধুমাত্র নতুন শুরু হওয়া অ্যাপ্লিকেশনগুলিকে প্রভাবিত করবে। সুতরাং, এই সেটিংটি পুরোপুরি প্রয়োগ করতে আপনার ডিভাইসটি পুনরায় বুট করার পরামর্শ দেওয়া হচ্ছে। যদি এর পরে কিছু অ্যাপ্লিকেশন পুরানো আকার ব্যবহার করে তবে তাদের অ্যাপ্লিকেশন ক্যাশে সাফ করার চেষ্টা করুন।</string>
