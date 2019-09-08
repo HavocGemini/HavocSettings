@@ -53,7 +53,7 @@
     <string name="quicksettings_title">দ্রুত সেটিংস</string>
     <string name="recents_title">সাম্প্রতিক</string>
     <string name="statusbar_title">স্ট্যাটাস বার</string>
-    <string name="system_title">পদ্ধতি</string>
+    <string name="system_title">সিস্টেম</string>
     <string name="weather_title">আবহাওয়া</string>
     <string name="volume_title">ভলিউম রকারস</string>
     <string name="device_part_title">ডিভাইস</string>
@@ -188,7 +188,7 @@
 	<string name="toast_animation_test">এটি নির্বাচিত টোস্ট অ্যানিমেশনের জন্য পরীক্ষা</string>
 	<string name="toast">টোস্ট</string>
 	<!-- Option to enable/disable scrolling cache -->
-	<string name="pref_scrollingcache_title">স্ক্রোলিং ক্যাশে</string>
+	<string name="pref_scrollingcache_title">স্ক্রোলিং ক্যাশ</string>
 	<string name="pref_scrollingcache_summary">স্ক্রোলিং ক্যাশে মেমরির ব্যয়ে স্ক্রোলিং কার্যকারিতা উন্নত করতে পারে</string>
 	<string name="pref_scrollingcache_force_enable">সক্ষম (জোর করে)</string>
 	<string name="pref_scrollingcache_default_enable">সক্ষম করা</string>
@@ -283,8 +283,8 @@
 	<!-- Enable keys backlight-->
 	<string name="button_brightness_title">বোতামের ব্যাকলাইট উজ্জ্বলতা</string>
 	<!-- Enable keys backlight-->
-	<string name="button_brightness_sw_title">ব্যাকলাইট সক্ষম করুন</string>
-	<string name="button_backlight_on_touch_only_title">স্পর্শে বোতামের ব্যাকলাইট</string>
+	<string name="button_brightness_sw_title">ব্যাকলাইট চালু করুন</string>
+	<string name="button_backlight_on_touch_only_title">শুধুমাত্র স্পর্শে বোতামের ব্যাকলাইট চালু</string>
 	<string name="button_backlight_on_touch_only_summary">কেবলমাত্র বোতামের স্পর্শে টাইমআউট সহ ব্যাকলাইট সক্ষম করুন</string>
 	<!-- HW Keys customization -->
 	<string name="picker_activities">ক্রিয়াকলাপ</string>
@@ -456,7 +456,7 @@
 	<string name="double_tap_sleep_lockscreen_title">ঘুমাতে দুবার আলতো চাপুন</string>
 	<string name="double_tap_sleep_lockscreen_sumary">ডিভাইসটিকে ঘুমাতে রাখতে লকস্ক্রিনে যে কোনও জায়গায় ডাবল ট্যাপ করুন</string>
 	<!-- Incall vibrate options -->
-	<string name="incall_vibration_category">ইন কল কল</string>
+	<string name="incall_vibration_category">ইন কল ভাইব্রেশন</string>
 	<string name="incall_vibrate_connect_title">কানেক্টে ভাইব্রেট করুন</string>
 	<string name="incall_vibrate_call_wait_title">কল ওয়েটে ভাইব্রেট করুন</string>
 	<string name="incall_vibrate_disconnect_title">সংযোগ বিচ্ছিন্ন উপর কম্পন</string>
@@ -478,8 +478,8 @@
 	<string name="ambient_battery_percent_summary">ঝিমুনি সময় নীচে ব্যাটারি শতাংশ দেখান</string>
 	<string name="doze_display_title">অ্যাম্বিয়েন্ট ডিসপ্লে</string>
 	<!-- Wakeup options -->
-	<string name="wakeup_when_plugged_unplugged_title">দায়িত্বে জেগে</string>
-	<string name="wakeup_when_plugged_unplugged_summary">চার্জারটি প্লাগ করা / প্লাগ লাগানো থাকলে ডিভাইসটি জাগ্রত করুন।</string>
+	<string name="wakeup_when_plugged_unplugged_title">চার্জ করার সময় জেগে উঠবে</string>
+	<string name="wakeup_when_plugged_unplugged_summary">চার্জারটি প্লাগ করা / প্লাগ লাগানো থাকলে ডিভাইসটি জাগ্রত করুন</string>
 	<!-- Three-fingers-swipe to screenshot -->
 	<string name="three_finger_gesture">স্ক্রিনশটটিতে সোয়াইপ করুন</string>
 	<string name="three_finger_gesture_summary">স্ক্রিনশট নিতে তিনটি আঙুল সোয়াইপ করুন</string>
@@ -567,7 +567,7 @@
 	<string name="gesture_preference_aosp">সিস্টেম অঙ্গভঙ্গি</string>
 	<string name="gesture_preference_aosp_summary">ডিভাইসের নির্দিষ্ট সিস্টেম অঙ্গভঙ্গি অ্যাক্সেস করুন</string>
 	<!-- Statusbar Clock -->
-	<string name="status_bar_clock_title">ঘড়ি & অ্যাম্প; তারিখ</string>
+	<string name="status_bar_clock_title">ঘড়ি &amp; তারিখ</string>
 	<string name="status_bar_clock_summary">স্ট্যাটাসবারে ঘড়ি এবং তারিখ কাস্টমাইজ করুন</string>
 	<string name="status_bar_clock_show">ঘড়ি এবং তারিখ দেখান</string>
 	<string name="status_bar_clock_style_title">ঘড়ির স্টাইল</string>
@@ -825,7 +825,7 @@
 	<string name="mt_refresh">সতেজ করা</string>
 	<string name="mt_share">ভাগ</string>
 	<string name="mt_reset">রিসেট</string>
-	<string name="time_in_state_title">রাজ্যে সময়</string>
+	<string name="time_in_state_title">টাইম ইন স্টেট</string>
 	<string name="time_in_state_summary">সিপিইউ ফ্রিকোয়েন্সি পরিসংখ্যান দেখান</string>
 	<!-- Swap navigation keys -->
 	<string name="swap_navigation_keys_title">কীগুলি অদলবদল করুন</string>
@@ -1027,7 +1027,7 @@
 	<!-- Show VoLTE icon on statusbar -->
 	<string name="volte_icon_title">VoLTE আইকন</string>
 	<string name="volte_icon_summary">স্ট্যাটাসবারে ভোল্ট আইকন প্রদর্শন করুন</string>
-	<string name="statusbar_show_wifi_activity_title">Wi-Fi ডেটা সূচক ators</string>
+	<string name="statusbar_show_wifi_activity_title">Wi-Fi ডেটা ইনডিকেটর</string>
 	<string name="statusbar_show_wifi_activity_summary">যখন Wi-Fi মোবাইলের মতো ডেটা প্রেরণ / গ্রহণ করছে তখন সূচকগুলি দেখান Show</string>
 	<!-- Notification count -->
 	<string name="status_bar_notif_count_title">বিজ্ঞপ্তি গণনা</string>
@@ -1035,7 +1035,7 @@
 	<!-- Weather -->
 	<string name="weather_unit">তাপমাত্রা ইউনিট</string>
 	<!-- Statusbar ticker -->
-	<string name="status_bar_show_ticker_title">হৃত্পত্তি</string>
+	<string name="status_bar_show_ticker_title">স্পন্দনকারী</string>
 	<string name="status_bar_show_ticker_summary">স্ট্যাটাস বারে বিজ্ঞপ্তি পূর্বরূপ</string>
 	<string name="ticker_animation_mode_title">টিকার অ্যানিমেশন</string>
 	<string name="ticker_animation_mode_alpha_fade">বিবর্ণ</string>
@@ -1045,7 +1045,7 @@
 	<string name="lock_date_font_title">তারিখ ফন্ট শৈলী</string>
 	<!-- Rounded corners -->
 	<string name="corner_fwvals">কাঠামোর মানগুলি ব্যবহার করুন</string>
-	<string name="corner_fwvals_summary">যদি ডিভাইসে আসলে কোণার থাকে তবে দরকারী</string>
+	<string name="corner_fwvals_summary">যদি ডিভাইসে আসলে রাউন্ড কর্নার থাকে তবে দরকারী</string>
 	<string name="corner_radius">গোলাকার কর্নার ব্যাসার্ধ</string>
 	<string name="content_padding">কর্নার সামগ্রী প্যাডিং</string>
 	<string name="status_bar_padding">স্ট্যাটাসবার প্যাডিং</string>
@@ -1055,7 +1055,7 @@
 	<string name="systemui_theme_style_light">আলো</string>
 	<string name="systemui_theme_style_dark">অন্ধকার</string>
 	<string name="systemui_theme_style_shady">ছায়াময়</string>
-	<string name="systemui_theme_style_glassy">কাচের</string>
+	<string name="systemui_theme_style_glassy">কাচের মতো</string>
 	<string name="applying_theme_toast">থিম প্রয়োগ করা হচ্ছে, দয়া করে অপেক্ষা করুন ...</string>
 	<string name="theme_applied_toast">থিম প্রয়োগ হয়েছে!</string>
 	<!-- QS header styles -->
@@ -1122,7 +1122,7 @@
 	<string name="ui_pixel">পিক্সেল</string>
 	<string name="ui_aosp">AOSP</string>
 	<!-- ScreenRecord Shortcut -->
-	<string name="screen_record_shortcut">স্ক্রিনকার্ড শর্টকাট</string>
+	<string name="screen_record_shortcut">স্ক্রিন রেকর্ড শর্টকাট</string>
 	<string name="screen_record_shortcut_summary">পাওয়ার + ভলিউম আপ বোতাম টিপলে স্ক্রীন রেকর্ড শুরু করুন</string>
 	<!-- ScreenShot Shortcut -->
 	<string name="screen_shot_shortcut">স্ক্রিনশট শর্টকাট</string>
@@ -1145,7 +1145,7 @@
 	<string name="volume_panel_on_left_title">বাম দিকে ভলিউম প্যানেল</string>
 	<string name="volume_panel_on_left_summary">স্ক্রিনের বাম দিকে ভলিউম প্যানেল প্রদর্শন করুন</string>
 	<!-- Screenrecord quality -->
-	<string name="screenrecord_quality_title">স্ক্রিনকার্ড মানের</string>
+	<string name="screenrecord_quality_title">স্ক্রিন রেকর্ডের মান</string>
 	<string name="screenrecord_quality_low">কম</string>
 	<string name="screenrecord_quality_medium">মধ্যম</string>
 	<string name="screenrecord_quality_high">উচ্চ</string>
