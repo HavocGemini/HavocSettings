@@ -152,7 +152,7 @@
     <string name="powermenu_ls_screenshot_summary">লকস্ক্রিনে স্ক্রিনশট বিকল্পটি দেখান</string>
     <string name="powermenu_ls_airplane_summary">লকস্ক্রিনে বিমান মোড বিকল্পটি দেখান</string>
     <!-- Lockscreen battery info indicator  -->
-    <string name="lockscreen_battery_info_title">তথ্য চার্জ করা হচ্ছে</string>
+    <string name="lockscreen_battery_info_title">চার্জ সম্পর্কিত তথ্য</string>
     <string name="lockscreen_battery_info_summary">চার্জ করার সময় চার্জার সর্বাধিক বর্তমান, ভোল্টেজ এবং ব্যাটারি তাপমাত্রা প্রদর্শন করুন</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">ফিঙ্গারপ্রিন্ট প্রমাণীকরণের কম্পন</string>
@@ -175,7 +175,7 @@
     <string name="toast_SlideRight_animation">ডানদিকে স্লাইড</string>
     <string name="toast_SlideLeft_animation">বাম দিকে স্লাইড</string>
     <string name="toast_Xylon_animation">Xylon</string>
-    <string name="toast_Toko_animation">আপনি যদি</string>
+    <string name="toast_Toko_animation">Toko</string>
     <string name="toast_TN_animation">TN</string>
     <string name="toast_Honami_animation">Honami</string>
     <string name="toast_FastFade_animation">দ্রুত বিবর্ণ</string>
@@ -320,7 +320,7 @@
     <string name="lockscreen_tuner_title">নীচে শর্টকাটগুলি</string>
     <string name="lockscreen_tuner_summary">নীচে বাম / ডান শর্টকাটগুলি পরিবর্তন করুন</string>
     <!-- FC notifications -->
-    <string name="disable_fc_notifications_title">বন্ধ বিজ্ঞপ্তি জোর</string>
+    <string name="disable_fc_notifications_title">জোর করে বন্ধ করা বিজ্ঞপ্তি </string>
     <string name="disable_fc_notifications_summary">কোনও অ্যাপ ক্রাশ হয়ে গেলে একটি ডায়ালগ দেখান</string>
     <!-- Navbar tuner -->
     <string name="navbar_tuner_title">নববার বোতাম</string>
@@ -450,11 +450,11 @@
     <string name="brightness_slider_title">ব্রাইটনেস স্লাইডার</string>
     <string name="brightness_slider_summary">দ্রুত সেটিংসে ব্রাইটনেস স্লাইডারটি দেখান</string>
     <!-- Double-tap-to sleep -->
-    <string name="double_tap_sleep_gesture_title">ঘুমাতে দুবার আলতো চাপুন</string>
+    <string name="double_tap_sleep_gesture_title">ডিভাইসটিকে ঘুম পাড়াতে দুবার আলতো চাপুন</string>
     <string name="double_tap_sleep_gesture_summary">ডিভাইসটিকে ঘুমাতে রাখতে স্ট্যাটাস বারে ডাবল আলতো চাপুন</string>
     <!-- DoubleTap2Sleep -->
-    <string name="double_tap_sleep_lockscreen_title">ঘুমাতে দুবার আলতো চাপুন</string>
-    <string name="double_tap_sleep_lockscreen_sumary">ডিভাইসটিকে ঘুমাতে রাখতে লকস্ক্রিনে যে কোনও জায়গায় ডাবল ট্যাপ করুন</string>
+    <string name="double_tap_sleep_lockscreen_title">ঘুম পাড়াতে দুবার আলতো চাপুন</string>
+    <string name="double_tap_sleep_lockscreen_sumary">ডিভাইসটিকে ঘুমিয়ে রাখতে লকস্ক্রিনে যে কোনও জায়গায় ডাবল ট্যাপ করুন</string>
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">ইন কল ভাইব্রেশন</string>
     <string name="incall_vibrate_connect_title">কানেক্টে ভাইব্রেট করুন</string>
@@ -517,10 +517,10 @@
     <string name="show_cpu_info">সিপিইউ তথ্য দেখান</string>
     <string name="show_cpu_info_summary">স্ক্রিন ওভারলে বর্তমান সিপিইউ তথ্য দেখায়</string>
     <!-- Fingerprint unlock keystore -->
-    <string name="fp_unlock_keystore_title">FP প্রমাণীকরণ জোর করুন</string>
+    <string name="fp_unlock_keystore_title">জোর করে FP প্রমাণীকরণ করুন</string>
     <string name="fp_unlock_keystore_summary">রিবুট বা লকডাউন করার পরে ফিঙ্গারপ্রিন্ট সহ ডিভাইসটি আনলক করুন</string>
     <!-- Sensor block per-package -->
-    <string name="sensor_block_title">সেন্সর প্রতি প্যাকেজ ব্লক</string>
+    <string name="sensor_block_title">প্যাকেজ সেন্সর প্রতি ব্লক</string>
     <string name="sensor_block_summary">ব্যাটারি সংরক্ষণের জন্য কিছু অ্যাপ্লিকেশনের জন্য নির্দিষ্ট সেন্সরগুলিতে অ্যাক্সেস ব্লক করুন</string>
     <!-- Battery percentage -->
     <string name="battery_style_category_title">ব্যাটারি আইকন</string>
